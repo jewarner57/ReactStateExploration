@@ -1,25 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import Counter from './Counter'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <header className="App-header">
+                <h1>React State Exploration</h1>
+                <Counter step={1} max={35} min={0} />
+                <Counter step={3} max={30} min={0} />
+                <Counter step={50} max={350} min={-350} />
+            </header>
+        </div>
+    );
 }
 
 export default App;
