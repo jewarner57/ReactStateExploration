@@ -7,23 +7,25 @@ class CounterList extends React.Component {
         super(props)
 
         this.state = {
-            counter1: 0
+            counters: [0, 0, 0]
         }
-
-        //this.changeCounter = this.changeCounter.bind(this)
     }
 
-    updateCounters(value) {
-        this.setState({ counter1: value })
+    updateCounters(value, index) {
+        let counterVals = this.state.counters
+        counterVals[index] = value
+        this.setState({ counters: counterVals })
     }
 
     render() {
         return (
             <div className="counterList">
-                <p>{this.state.counter1}</p>
-                <Counter step={1} max={35} min={0} onChange={(value) => this.updateCounters(value)} />
-                <Counter step={3} max={30} min={0} />
-                <Counter step={50} max={350} min={-350} />
+                <p>Lifted Up: {this.state.counters[0]}</p>
+                <Counter step={1} max={35} min={0} onChange={(value) => this.updateCounters(value, 0)} />
+                <p>Lifted Up: {this.state.counters[1]}</p>
+                <Counter step={3} max={30} min={0} onChange={(value) => this.updateCounters(value, 1)} />
+                <p>Lifted Up: {this.state.counters[2]}</p>
+                <Counter step={50} max={350} min={-350} onChange={(value) => this.updateCounters(value, 2)} />
             </div>
 
         )
