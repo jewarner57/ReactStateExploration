@@ -1,14 +1,13 @@
 import './App.css';
-import Counter from './Counter'
+import CounterList from './CounterList'
+
 
 function App() {
     return (
         <div className="App">
             <header className="App-header">
                 <h1>React State Exploration</h1>
-                <Counter step={1} max={35} min={0} />
-                <Counter step={3} max={30} min={0} />
-                <Counter step={50} max={350} min={-350} />
+                <CounterList />
             </header>
         </div>
     );

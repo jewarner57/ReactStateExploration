@@ -19,6 +19,7 @@ class Counter extends React.Component {
         if (currCount + step <= this.props.max && currCount + step >= this.props.min) {
             currCount += step
             this.setState({ count: currCount })
+            this.props.onChange(currCount)
         }
     }
 
